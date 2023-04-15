@@ -6,6 +6,7 @@ It shall NOT be edited by hand.
 # Mongo Express for YunoHost
 
 [![Integration level](https://dash.yunohost.org/integration/mongo-express.svg)](https://dash.yunohost.org/appci/app/mongo-express) ![Working status](https://ci-apps.yunohost.org/ci/badges/mongo-express.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/mongo-express.maintain.svg)
+
 [![Install Mongo Express with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=mongo-express)
 
 *[Lire ce readme en français.](./README_fr.md)*
