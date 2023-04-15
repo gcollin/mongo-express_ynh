@@ -5,15 +5,15 @@ It shall NOT be edited by hand.
 
 # Mongo Express pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/mongo-express.svg)](https://dash.yunohost.org/appci/app/mongo-express) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/mongo-express.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/mongo-express.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/mongo-express.svg)](https://dash.yunohost.org/appci/app/mongo-express) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/mongo-express.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/mongo-express.maintain.svg)
 [![Installer Mongo Express avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=mongo-express)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer Mongo Express rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer Mongo Express rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Mongo Express is a Web-based MongoDB admin interface written with Node.js, Express and Bootstrap3.
 You can as well install a Mongo database - version 4, 5 or 6 in your yunohost server if you want 
@@ -37,13 +37,13 @@ You can as well install a Mongo database - version 4, 5 or 6 in your yunohost se
 - Supports replica sets
 
 
-**Version incluse :** 1.0~ynh3
+**Version incluse :** 1.0~ynh4
 
-## Captures d'écran
+## Captures d’écran
 
-![Capture d'écran de Mongo Express](./doc/screenshots/document-edit.png)
-![Capture d'écran de Mongo Express](./doc/screenshots/collection-view.png)
-![Capture d'écran de Mongo Express](./doc/screenshots/databases-view.png)
+![Capture d’écran de Mongo Express](./doc/screenshots/document-edit.png)
+![Capture d’écran de Mongo Express](./doc/screenshots/collection-view.png)
+![Capture d’écran de Mongo Express](./doc/screenshots/databases-view.png)
 
 ## Avertissements / informations importantes
 
@@ -59,7 +59,7 @@ You can as well install a Mongo database - version 4, 5 or 6 in your yunohost se
 
 ## Documentations et ressources
 
-* Dépôt de code officiel de l'app : <https://github.com/mongo-express/mongo-express>
+* Dépôt de code officiel de l’app : <https://github.com/mongo-express/mongo-express>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_mongo-express>
 * Signaler un bug : <https://github.com/YunoHost-Apps/mongo-express_ynh/issues>
 
@@ -75,4 +75,4 @@ ou
 sudo yunohost app upgrade mongo-express -u https://github.com/YunoHost-Apps/mongo-express_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>

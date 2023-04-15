@@ -6,7 +6,7 @@
         "en": "An admin server for Mongo and optionally a Mongo database",
         "fr": "Un serveur d'administration pour Mongo ainsi qu'optionnellement une base Mongo"
     },
-    "version": "1.0~ynh3",
+    "version": "1.0~ynh4",
     "url": "https://github.com/mongo-express/mongo-express",
     "upstream": {
         "license": "MIT",
