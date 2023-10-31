@@ -61,7 +61,7 @@ You can as well install a Mongo database - version 4, 5 or 6 in your yunohost se
 ## Documentation and resources
 
 * Upstream app code repository: <https://github.com/mongo-express/mongo-express>
-* YunoHost documentation for this app: <https://yunohost.org/app_mongo-express>
+* YunoHost Store: <https://apps.yunohost.org/app/mongo-express>
 * Report a bug: <https://github.com/YunoHost-Apps/mongo-express_ynh/issues>
 
 ## Developer info
