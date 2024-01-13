@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "mongo-express"
 name = "Mongo Express"
-description.en = "An admin server for Mongo and optionally a Mongo database"
-description.fr = "Un serveur d'administration pour Mongo ainsi qu'optionnellement une base Mongo"
+description.en = "Admin server for Mongo and optionally Mongo database"
+description.fr = "Serveur d'administration pour Mongo ainsi qu'optionnellement une base Mongo"
 
 version = "1.0~ynh4"
 
@@ -17,15 +17,17 @@ code = "https://github.com/mongo-express/mongo-express"
 cpe = "cpe:2.3:a:mongo-express_project:mongo-express"
 
 [integration]
-yunohost = ">= 11.0.0"
-# FIXME: Test other architectures
+yunohost = ">= 11.2"
 architectures = ["amd64"]
 multi_instance = false
+
 ldap = "not_relevant"
+
 sso = "not_relevant"
-disk = "50M" # FIXME: replace with an **estimate** minimum disk requirement. e.g. 20M, 400M, 1G, ...
-ram.build = "50M" # FIXME: replace with an **estimate** minimum ram requirement. e.g. 50M, 400M, 1G, ...
-ram.runtime = "50M" # FIXME: replace with an **estimate** minimum ram requirement. e.g. 50M, 400M, 1G, ...
+
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
 
 [install]
     [install.domain]
@@ -42,7 +44,7 @@ ram.runtime = "50M" # FIXME: replace with an **estimate** minimum ram requiremen
     [install.mongo_version]
     ask.en = "Select the major version of Mongo to install or 'None' if already installed"
     ask.fr = "Choisissez la version de Mongo a installer ou 'None' si Mongo est déjà installé"
-    type = "string"
+    type = "select"
     choices = ["None", "4.4", "5.0", "6.0"]
     default = "6.0"
 
