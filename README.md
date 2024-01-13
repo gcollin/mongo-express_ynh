@@ -46,22 +46,10 @@ You can as well install a Mongo database - version 4, 5 or 6 in your yunohost se
 ![Screenshot of Mongo Express](./doc/screenshots/collection-view.png)
 ![Screenshot of Mongo Express](./doc/screenshots/databases-view.png)
 
-## Disclaimers / important information
-
-* For now, any user that can log to your server will have admin access to all your Mongo databases !
-    * Single-sign on or LDAP are not integrated
-    * It's strongly recommanded you don't enable public access to the application
-
-* It doesn't backup Mongo databases
-    * As mongo-express doesn't require any database by itself, it doesn't backup or restore any of them
-    * However, yYou can view / edit other applications databases with Mongo-Express
-    * It will just reinstall the Mongo server if you installed it with this script 
-    * Any yunohost applications using Mongo databases should manage the backup and restore
-
 ## Documentation and resources
 
 * Upstream app code repository: <https://github.com/mongo-express/mongo-express>
-* YunoHost documentation for this app: <https://yunohost.org/app_mongo-express>
+* YunoHost Store: <https://apps.yunohost.org/app/mongo-express>
 * Report a bug: <https://github.com/YunoHost-Apps/mongo-express_ynh/issues>
 
 ## Developer info

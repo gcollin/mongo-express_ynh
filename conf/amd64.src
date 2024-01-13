@@ -1,7 +1,0 @@
-SOURCE_URL=https://github.com/mongo-express/mongo-express/archive/refs/tags/v1.0.1.tar.gz
-SOURCE_SUM=d48880bb296f150889a502096a71775f1b0066dec2d7f3f47b346382c13c76fb
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=tar.gz
-SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=
-SOURCE_EXTRACT=true
