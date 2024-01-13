@@ -25,7 +25,6 @@ ynh_systemd_action --service_name="$app" --action="stop" --log_path="/var/log/$a
 ynh_script_progression --message="Installing NodeJS..." --weight=3
 
 ynh_install_nodejs --nodejs_version="$nodejs_version"
-ynh_use_nodejs
 
 # Install mongo server only if asked to
 if [ "$mongo_version" != "None" ]; then
@@ -60,6 +59,7 @@ ynh_script_progression --message="Building NodeJS code and dependencies..." --we
 
 # Install Nodejs dependencies
 pushd "$install_dir"
+    ynh_use_nodejs
     ynh_exec_as "$app" "$ynh_node_load_PATH" "$ynh_npm" install
 popd
 
