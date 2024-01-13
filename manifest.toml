@@ -14,7 +14,6 @@ maintainers = ["Gerard Collin"]
 [upstream]
 license = "MIT"
 code = "https://github.com/mongo-express/mongo-express"
-website = "https://github.com/mongo-express/mongo-express"
 cpe = "cpe:2.3:a:mongo-express_project:mongo-express"
 
 [integration]
