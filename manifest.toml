@@ -7,7 +7,7 @@ name = "Mongo Express"
 description.en = "Admin server for Mongo and optionally Mongo database"
 description.fr = "Serveur d'administration pour Mongo ainsi qu'optionnellement une base Mongo"
 
-version = "1.0~ynh5"
+version = "1.0.2~ynh1"
 
 maintainers = ["Gerard Collin"]
 
@@ -39,7 +39,7 @@ ram.runtime = "50M"
 
     [install.init_main_permission]
     type = "group"
-    default = false
+    default = "visitors"
 
     [install.mongo_version]
     ask.en = "Select the major version of Mongo to install or 'None' if already installed"
@@ -50,8 +50,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/mongo-express/mongo-express/archive/refs/tags/v1.0.0.tar.gz"
-    sha256 = "584bed4033f4b8f2f16824ec1eabfb3919aa04dfef72673a4e5ca8f4ef9f3b92"
+    url = "https://github.com/mongo-express/mongo-express/archive/refs/tags/v1.0.2.tar.gz"
+    sha256 = "c60a764aa71d37c18ec2bb6db8fe77356ca3bdbd91fa70a893106de1632640a1"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = ".*.tar.gz"
