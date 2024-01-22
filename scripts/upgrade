@@ -26,11 +26,6 @@ ynh_script_progression --message="Installing NodeJS & Yarn" --weight=3
 
 ynh_install_nodejs --nodejs_version="$nodejs_version"
 
-pushd "$install_dir"
-    ynh_use_nodejs
-    _install_yarn
-popd
-
 # Install mongo server only if asked to
 if [ "$mongo_version" != "None" ]; then
     ynh_script_progression --message="Installing MongoDB..." --weight=3
@@ -60,11 +55,19 @@ chown "$app:$app" "$install_dir/.env"
 #=================================================
 # BUILD NODEJS CODE
 #=================================================
-ynh_script_progression --message="Building NodeJS code and dependencies..." --weight=6
+ynh_script_progression --message="Installing Yarn and Buuilding application..." --weight=6
 
 # Build using Yarn
 pushd "$install_dir"
     ynh_use_nodejs
+        # We must use npm to install yarn but without installing other dependencies as npm fails with them
+    if [ -f "package.json" ]; then
+        mv package.json package.json.mov 
+    fi
+    _install_yarn
+    if [ -f "package.json.mov" ]; then
+        mv package.json.mov package.json 
+    fi
     ynh_exec_as "$app" "$ynh_node_load_PATH" "$ynh_yarn" install
     ynh_exec_as "$app" "$ynh_node_load_PATH" "$ynh_npm" run build
 popd
