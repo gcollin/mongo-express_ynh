@@ -14,7 +14,7 @@ nodejs_version=16
 # EXPERIMENTAL HELPERS
 #=================================================
 _install_yarn () {
-    ynh_exec_as "$app" "$ynh_node_load_PATH" npm install yarn
+    ynh_exec_as "$app" "$ynh_node_load_PATH" $ynh_npm install yarn
     ynh_yarn="$install_dir/node_modules/.bin/yarn"
     alias ynh_yarn="$ynh_yarn"
 }
