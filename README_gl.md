@@ -42,8 +42,8 @@ You can as well install a Mongo database - version 4, 5 or 6 in your yunohost se
 
 ## Capturas de pantalla
 
-![Captura de pantalla de Mongo Express](./doc/screenshots/collection-view.png)
 ![Captura de pantalla de Mongo Express](./doc/screenshots/document-edit.png)
+![Captura de pantalla de Mongo Express](./doc/screenshots/collection-view.png)
 ![Captura de pantalla de Mongo Express](./doc/screenshots/databases-view.png)
 
 ## Documentación e recursos
