@@ -9,7 +9,7 @@ It shall NOT be edited by hand.
 
 [![Install Mongo Express with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=mongo-express)
 
-*[Read this README is other languages.](./ALL_README.md)*
+*[Read this README in other languages.](./ALL_README.md)*
 
 > *This package allows you to install Mongo Express quickly and simply on a YunoHost server.*  
 > *If you don't have YunoHost, please consult [the guide](https://yunohost.org/install) to learn how to install it.*
@@ -17,7 +17,7 @@ It shall NOT be edited by hand.
 ## Overview
 
 Mongo Express is a Web-based MongoDB admin interface written with Node.js, Express and Bootstrap3.
-You can as well install a Mongo database - version 4, 5, 6 or 7 in your yunohost server if you want 
+You can as well install a Mongo database - version 4, 5 or 6 in your yunohost server if you want 
 
 ### Features
 - Optionally installs Mongo server
