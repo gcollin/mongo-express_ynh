@@ -17,7 +17,7 @@ NON debe editarse manualmente.
 ## Vista xeral
 
 Mongo Express is a Web-based MongoDB admin interface written with Node.js, Express and Bootstrap3.
-You can as well install a Mongo database - version 4, 5 or 6 in your yunohost server if you want 
+You can as well install a Mongo database - version 4, 5, 6 or 7 in your yunohost server if you want 
 
 ### Features
 - Optionally installs Mongo server
@@ -38,7 +38,7 @@ You can as well install a Mongo database - version 4, 5 or 6 in your yunohost se
 - Supports replica sets
 
 
-**Versión proporcionada:** 1.0.2~ynh1
+**Versión proporcionada:** 1.0.2~ynh2
 
 ## Capturas de pantalla
 
