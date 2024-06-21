@@ -24,9 +24,6 @@ fi
 # Remove the dedicated systemd config
 ynh_remove_systemd_config
 
-# Remove the app-specific logrotate config
-ynh_remove_logrotate
-
 # Remove the dedicated NGINX config
 ynh_remove_nginx_config
 
