@@ -5,7 +5,7 @@
 #=================================================
 
 nodejs_version=16
-YNH_MONGO_VERSION=5.0
+YNH_MONGO_VERSION=6.0
 
 #=================================================
 # PERSONAL HELPERS
