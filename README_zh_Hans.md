@@ -42,9 +42,9 @@ You can as well install a Mongo database - version 4, 5 or 6 in your yunohost se
 
 ## 截图
 
+![Mongo Express 的截图](./doc/screenshots/document-edit.png)
 ![Mongo Express 的截图](./doc/screenshots/collection-view.png)
 ![Mongo Express 的截图](./doc/screenshots/databases-view.png)
-![Mongo Express 的截图](./doc/screenshots/document-edit.png)
 
 ## 文档与资源
 
