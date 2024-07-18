@@ -5,7 +5,7 @@
 
 # YunoHost 上的 Mongo Express
 
-[![集成程度](https://dash.yunohost.org/integration/mongo-express.svg)](https://dash.yunohost.org/appci/app/mongo-express) ![工作状态](https://ci-apps.yunohost.org/ci/badges/mongo-express.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/mongo-express.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/mongo-express.svg)](https://ci-apps.yunohost.org/ci/apps/mongo-express/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/mongo-express.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/mongo-express.maintain.svg)
 
 [![使用 YunoHost 安装 Mongo Express](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=mongo-express)
 
