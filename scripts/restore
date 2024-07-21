@@ -49,6 +49,7 @@ systemctl enable "$app.service" --quiet
 yunohost service add "$app" --description="Mongo Express to easily administer your Mongo databases" --log="/var/log/$app/$app.log"
 
 ynh_restore_file --origin_path="/etc/logrotate.d/$app"
+mkdir --parents /var/log/$app
 
 #=================================================
 # DONT RESTORE THE MONGO DATABASE
