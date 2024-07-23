@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # Mongo Express YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/mongo-express.svg)](https://dash.yunohost.org/appci/app/mongo-express) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/mongo-express.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/mongo-express.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/mongo-express.svg)](https://ci-apps.yunohost.org/ci/apps/mongo-express/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/mongo-express.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/mongo-express.maintain.svg)
 
 [![Instalatu Mongo Express YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=mongo-express)
 
@@ -38,7 +38,7 @@ You can as well install a Mongo database - version 4, 5 or 6 in your yunohost se
 - Supports replica sets
 
 
-**Paketatutako bertsioa:** 1.0.2~ynh2
+**Paketatutako bertsioa:** 1.0.2~ynh4
 
 ## Pantaila-argazkiak
 
