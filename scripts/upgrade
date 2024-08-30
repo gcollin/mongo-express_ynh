@@ -1,34 +1,26 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# STANDARD UPGRADE STEPS
-#=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Stopping a systemd service..." --weight=1
+ynh_script_progression "Stopping $app's systemd service..."
 
-ynh_systemd_action --service_name="$app" --action="stop" --log_path="/var/log/$app/$app.log"
+ynh_systemctl --service="$app" --action="stop"
 
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Installing NodeJS & Yarn" --weight=3
+ynh_script_progression "Installing NodeJS & Yarn"
 
-ynh_install_nodejs --nodejs_version="$nodejs_version"
+ynh_nodejs_install
 
 # Install mongo server only if asked to
 if [ "$mongo_version" != "None" ]; then
-    ynh_script_progression --message="Installing MongoDB..." --weight=3
-    ynh_install_mongo --mongo_version="$mongo_version"
+    ynh_script_progression "Installing MongoDB..."
+    ynh_install_mongo
 else
     # gives the mongo service name for the rest of installation
     mongodb_servicename=mongod
@@ -37,64 +29,65 @@ fi
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Upgrading source files..." --weight=6
+ynh_script_progression "Upgrading source files..."
 
 # Download, check integrity, uncompress and patch the source from amd64.src
-ynh_setup_source --full_replace=1 --dest_dir="$install_dir"
+ynh_setup_source --full_replace --dest_dir="$install_dir"
 
 cp "$install_dir/config.default.js" "$install_dir/config.js"
 
-chmod -R o-rwx "$install_dir"
-chown -R "$app:$app" "$install_dir"
-
-ynh_add_config --template=".env" --destination="$install_dir/.env"
-chmod 400 "$install_dir/.env"
-chown "$app:$app" "$install_dir/.env"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
+#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R "$app:$app" "$install_dir"
+ynh_config_add --template=".env" --destination="$install_dir/.env"
+#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 400 "$install_dir/.env"
+#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown "$app:$app" "$install_dir/.env"
 
 #=================================================
 # BUILD NODEJS CODE
 #=================================================
-ynh_script_progression --message="Installing Yarn and Buuilding application..." --weight=6
+ynh_script_progression "Installing Yarn and Buuilding application..."
 
 # Build using Yarn
 pushd "$install_dir"
-    ynh_use_nodejs
+
         # We must use npm to install yarn but without installing other dependencies as npm fails with them
     if [ -f "package.json" ]; then
-        mv package.json package.json.mov 
+        mv package.json package.json.mov
+
     fi
     _install_yarn
     if [ -f "package.json.mov" ]; then
-        mv package.json.mov package.json 
+        mv package.json.mov package.json
+
     fi
-    ynh_exec_as "$app" "$ynh_node_load_PATH" "$ynh_yarn" install
-    ynh_exec_as "$app" "$ynh_node_load_PATH" "$ynh_npm" run build
+    ynh_exec_as_app node_load_PATH" "$ynh_yarn" install
+    ynh_exec_as_app node_load_PATH" npm run build
 popd
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
+ynh_script_progression "Upgrading system configurations related to $app..."
 
 # Create a dedicated NGINX config
-ynh_add_nginx_config
+ynh_config_add_nginx
 
 # Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_config_add_systemd
 yunohost service add "$app" --description="Mongo Express to easily administer your Mongo databases" --log="/var/log/$app/$app.log"
 
 # Use logrotate to manage app-specific logfile(s)
-ynh_use_logrotate --non-append
+ynh_config_add_logrotate
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log"
+ynh_systemctl --service="$app" --action="start"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Upgrade of $app completed" --last
+ynh_script_progression "Upgrade of $app completed"
