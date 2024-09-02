@@ -46,15 +46,13 @@ ynh_script_progression "Installing Yarn and Buuilding application..."
 # Build using Yarn
 pushd "$install_dir"
 
-        # We must use npm to install yarn but without installing other dependencies as npm fails with them
+    # We must use npm to install yarn but without installing other dependencies as npm fails with them
     if [ -f "package.json" ]; then
         mv package.json package.json.mov
-
     fi
     _install_yarn
     if [ -f "package.json.mov" ]; then
         mv package.json.mov package.json
-
     fi
     ynh_exec_as_app "$ynh_yarn" install
     ynh_exec_as_app npm run build
