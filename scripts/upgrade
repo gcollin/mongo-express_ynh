@@ -55,7 +55,7 @@ pushd "$install_dir"
         mv package.json.mov package.json
     fi
     ynh_exec_as_app "$ynh_yarn" install
-    ynh_exec_as_app npm run build
+    ynh_exec_as_app $nodejs_dir/npm run build
 popd
 
 #=================================================
