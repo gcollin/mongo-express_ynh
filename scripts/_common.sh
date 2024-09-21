@@ -1,25 +1,14 @@
 #!/bin/bash
 
 #=================================================
-# COMMON VARIABLES
+# COMMON VARIABLES AND CUSTOM HELPERS
 #=================================================
 
-nodejs_version=16
-YNH_MONGO_VERSION=6.0
+nodejs_version=20
+mongo_version=7.0
 
-#=================================================
-# PERSONAL HELPERS
-#=================================================
-
-#=================================================
-# EXPERIMENTAL HELPERS
-#=================================================
 _install_yarn () {
-    ynh_exec_as "$app" "$ynh_node_load_PATH" $ynh_npm install yarn
+    ynh_exec_as_app $nodejs_dir/npm install yarn
     ynh_yarn="$install_dir/node_modules/.bin/yarn"
     alias ynh_yarn="$ynh_yarn"
 }
-
-#=================================================
-# FUTURE OFFICIAL HELPERS
-#=================================================
