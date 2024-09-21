@@ -48,7 +48,7 @@ You can as well install a Mongo database - version 4, 5 or 6 in your yunohost se
 
 ## Dokumentasi dan sumber daya
 
-- Repositori kode aplikasi hulu: <https://github.com/mongo-express/mongo-express>
+- Depot kode aplikasi hulu: <https://github.com/mongo-express/mongo-express>
 - Gudang YunoHost: <https://apps.yunohost.org/app/mongo-express>
 - Laporkan bug: <https://github.com/YunoHost-Apps/mongo-express_ynh/issues>
 
