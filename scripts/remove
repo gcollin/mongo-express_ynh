@@ -32,11 +32,6 @@ ynh_script_progression "Removing NodeJS..."
 # Remove the version of Nodejs used if needed
 ynh_nodejs_remove
 
-if [ "$mongo_version" != "None" ]; then
-    ynh_script_progression "Removing the MongoDB database..."
-    ynh_remove_mongo
-fi
-
 #=================================================
 # END OF SCRIPT
 #=================================================
