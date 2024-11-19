@@ -211,6 +211,26 @@ ynh_mongo_remove_db() {
     ynh_mongo_drop_user --db_user=$db_user --db_name=$db_name
 }
 
+_package_is_installed() {
+    # Declare an array to define the options of this helper.
+    local legacy_args=p
+    local -A args_array=([p]=package=)
+    local package
+    # Manage arguments with getopts
+    ynh_handle_getopts_args "$@"
+
+    dpkg-query --show --showformat='${Status}' "$package" 2> /dev/null \
+        | grep --count "ok installed" &> /dev/null
+}
+
+ynh_installed_mongo_version() {
+    if _package_is_installed --package "mongodb-org-server"; then
+        dpkg-query --show --showformat='${Version}' "mongodb-org-server" 2> /dev/null
+    else
+        echo ''
+    fi
+}
+
 # Install MongoDB and integrate MongoDB service in YunoHost
 # It can upgrade / downgrade the desired mongo version to ensure a compatible one is installed
 #
@@ -238,7 +258,7 @@ ynh_install_mongo() {
 
     # Check if MongoDB is already installed
     local install_package=true
-    local current_version=$(ynh_package_version --package="mongodb-org-server")
+    local current_version=$(ynh_installed_mongo_version)
     # Focus only the major, minor versions
     current_version=$(cut -c 1-3 <<< "$current_version")
 
