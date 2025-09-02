@@ -17,7 +17,7 @@ code = "https://github.com/mongo-express/mongo-express"
 cpe = "cpe:2.3:a:mongo-express_project:mongo-express"
 
 [integration]
-yunohost = ">= 11.2.29"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = ["amd64"]
 multi_instance = false
@@ -68,3 +68,6 @@ ram.runtime = "50M"
 
     [resources.ports]
     main.default = 8096
+
+    [resources.nodejs]
+    version = "20"

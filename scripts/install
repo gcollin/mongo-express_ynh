@@ -9,7 +9,7 @@ source _mongo_helper.sh
 #=================================================
 ynh_script_progression "Installing NodeJS & Yarn..."
 
-ynh_nodejs_install
+#REMOVEME? ynh_nodejs_install
 
 # Install mongo server only if asked to
 if [ "$mongo_version" != "None" ]; then
