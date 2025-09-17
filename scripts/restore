@@ -15,10 +15,6 @@ ynh_restore "$install_dir"
 #=================================================
 # REINSTALL DEPENDENCIES
 #=================================================
-#REMOVEME? ynh_script_progression "Reinstalling NodeJS..."
-
-#REMOVEME? ynh_nodejs_install
-
 # Install mongo server only if asked to
 if [ "$mongo_version" != "None" ]; then
     ynh_script_progression "Reinstalling MongoDB..."
