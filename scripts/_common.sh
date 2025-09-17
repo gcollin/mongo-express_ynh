@@ -4,8 +4,8 @@
 # COMMON VARIABLES AND CUSTOM HELPERS
 #=================================================
 
-nodejs_version=20
-mongo_version=7.0
+#REMOVEME? nodejs_version=20
+mon#REMOVEME? go_version=7.0
 
 _install_yarn () {
     ynh_exec_as_app $nodejs_dir/npm install yarn

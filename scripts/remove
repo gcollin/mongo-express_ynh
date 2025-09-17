@@ -27,10 +27,10 @@ ynh_config_remove_nginx
 #=================================================
 # REMOVE DEPENDENCIES
 #=================================================
-ynh_script_progression "Removing NodeJS..."
+#REMOVEME? ynh_script_progression "Removing NodeJS..."
 
 # Remove the version of Nodejs used if needed
-ynh_nodejs_remove
+#REMOVEME? ynh_nodejs_remove
 
 #=================================================
 # END OF SCRIPT
